@@ -1,0 +1,74 @@
+body,
+html,
+h1,
+h2,
+h3,
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 40px auto 40px;
+    grid-template-rows: [top-start] 60px [top-end content-start] auto [content-end bottom-start] 200px [bottom-end];
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+    grid-template-areas:
+        "header header header"
+        ". content ."
+        "footer footer footer";
+    font: 1em/120% arial, verdana, sans-serif;
+}
+
+header {
+    display: grid;
+    grid-area: header;
+    grid-template-columns: 40px 20% auto 40px;
+    background-color: black;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    padding: 0 7px;
+}
+
+.siteBrand {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    align-self: center;
+}
+
+header nav {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: end;
+    align-self: center;
+}
+
+main {
+    grid-area: content;
+}
+
+footer {
+    display: grid;
+    grid-area: footer;
+    grid-template-columns: 40px auto 40px;
+    color: white;
+    background-color: black;
+}
+
+footer section {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    align-self: center;
+}
